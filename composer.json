@@ -1,0 +1,20 @@
+{
+    "name": "ayoub-rh/phpiggy",
+    "description": "A PHP application for tracking expenses.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "AyoubRh7",
+            "email": "rhotaisayoub@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": 
+    {
+        "psr-4": 
+        {
+            "Framework\\": "src/Framework",
+            "App\\": "src/App"
+        }
+    }
+}
