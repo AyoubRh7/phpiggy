@@ -1,0 +1,169 @@
+<?php
+
+namespace App\Entity;
+
+use App\Repository\SeminarRepository;
+use Doctrine\DBAL\Types\Types;
+use Doctrine\ORM\Mapping as ORM;
+
+#[ORM\Entity(repositoryClass: SeminarRepository::class)]
+#[ORM\Table(name: 'seminar')]
+class Seminar
+{
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(name: 'seminar_id', type: Types::INTEGER)]
+    private ?int $seminar_id = null;
+
+    #[ORM\Column(name: 'seminar_einr_key_fk', type: Types::INTEGER, nullable: true)]
+    private ?int $seminar_einr_key_fk = null;
+
+    #[ORM\Column(name: 'seminar_bland_id_fk', type: Types::INTEGER, nullable: true)]
+    private ?int $seminar_bland_id_fk = null;
+
+    #[ORM\Column(name: 'seminar_art_id_fk', type: Types::INTEGER, nullable: true)]
+    private ?int $seminar_art_id_fk = null;
+
+    #[ORM\Column(name: 'seminar_titel', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_titel = null;
+
+    #[ORM\Column(name: 'seminar_untertitel', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_untertitel = null;
+
+    #[ORM\Column(name: 'seminar_url_anmeldeform', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_url_anmeldeform = null;
+
+    #[ORM\Column(name: 'seminar_url_info', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_url_info = null;
+
+    #[ORM\Column(name: 'seminar_veranst_weitere', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_veranst_weitere = null;
+
+    #[ORM\Column(name: 'seminar_adresse', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_adresse = null;
+
+    #[ORM\Column(name: 'seminar_kommentar', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_kommentar = null;
+
+    #[ORM\Column(name: 'seminar_anmeld_termin', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_anmeld_termin = null;
+
+    #[ORM\Column(name: 'seminar_kontakt_pers', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_kontakt_pers = null;
+
+    #[ORM\Column(name: 'seminar_email', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_email = null;
+
+    #[ORM\Column(name: 'seminar_ermaessigg', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_ermaessigg = null;
+
+    #[ORM\Column(name: 'seminar_foerd_instit', type: Types::TEXT, nullable: true)]
+    private ?string $seminar_foerd_instit = null;
+
+    #[ORM\Column(name: 'seminar_referent', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_referent = null;
+
+    #[ORM\Column(name: 'seminar_code', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_code = null;
+
+    #[ORM\Column(name: 'seminar_gebuehr', type: Types::TEXT, nullable: true)]
+    private ?string $seminar_gebuehr = null;
+
+    #[ORM\Column(name: 'seminar_voraussetzg', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_voraussetzg = null;
+
+    #[ORM\Column(name: 'seminar_teiln_min', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_teiln_min = null;
+
+    #[ORM\Column(name: 'seminar_teiln_max', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_teiln_max = null;
+
+    #[ORM\Column(name: 'seminar_telefon', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_telefon = null;
+
+    #[ORM\Column(name: 'seminar_beschreibg', type: Types::TEXT, nullable: true)]
+    private ?string $seminar_beschreibg = null;
+
+    #[ORM\Column(name: 'seminar_zielgruppe', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_zielgruppe = null;
+
+    #[ORM\Column(name: 'seminar_begin_date', type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $seminar_begin_date = null;
+
+    #[ORM\Column(name: 'seminar_begin_time', type: Types::TIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $seminar_begin_time = null;
+
+    #[ORM\Column(name: 'seminar_end_date', type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $seminar_end_date = null;
+
+    #[ORM\Column(name: 'seminar_end_time', type: Types::TIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $seminar_end_time = null;
+
+    #[ORM\Column(name: 'seminar_erfasser', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_erfasser = null;
+
+    #[ORM\Column(name: 'seminar_entry', type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $seminar_entry = null;
+
+    #[ORM\Column(name: 'seminar_update', type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $seminar_update = null;
+
+    #[ORM\Column(name: 'b_seminar_id', type: Types::INTEGER, nullable: true)]
+    private ?int $b_seminar_id = null;
+
+    #[ORM\Column(name: 'b_Bundesland', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $b_Bundesland = null;
+
+    #[ORM\Column(name: 'b_Veranstalter', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $b_Veranstalter = null;
+
+    #[ORM\Column(name: 'b_PLZ_Veranstaltg', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $b_PLZ_Veranstaltg = null;
+
+    #[ORM\Column(name: 'b_Schlagworte', type: Types::TEXT, nullable: true)]
+    private ?string $b_Schlagworte = null;
+
+    #[ORM\Column(name: 'b_Tagungsstaette', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $b_Tagungsstaette = null;
+
+    #[ORM\Column(name: 'b_Veranstalt_Art', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $b_Veranstalt_Art = null;
+
+    #[ORM\Column(name: 'b_Fachgebiet', type: Types::TEXT, nullable: true)]
+    private ?string $b_Fachgebiet = null;
+
+    #[ORM\Column(name: 'seminar_ort', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_ort = null;
+
+    #[ORM\Column(name: 'seminar_einr_basis_key', type: Types::STRING, length: 50, nullable: true)]
+    private ?string $seminar_einr_basis_key = null;
+
+    #[ORM\Column(name: 'seminar_basis_key', type: Types::STRING, length: 50, nullable: true)]
+    private ?string $seminar_basis_key = null;
+
+    #[ORM\Column(name: 'seminar_inhalt', type: Types::TEXT, nullable: true)]
+    private ?string $seminar_inhalt = null;
+
+    #[ORM\Column(name: 'seminar_methodik', type: Types::TEXT, nullable: true)]
+    private ?string $seminar_methodik = null;
+
+    #[ORM\Column(name: 'seminar_kost_u_logis', type: Types::TEXT, nullable: true)]
+    private ?string $seminar_kost_u_logis = null;
+
+    #[ORM\Column(name: 'seminar_mitzubringen', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_mitzubringen = null;
+
+    #[ORM\Column(name: 'seminar_anreise', type: Types::STRING, length: 255, nullable: true)]
+    private ?string $seminar_anreise = null;
+
+    #[ORM\Column(name: 'seminar_anmeldung', type: Types::TEXT, nullable: true)]
+    private ?string $seminar_anmeldung = null;
+
+    #[ORM\Column(name: 'seminar_allg_bedingg', type: Types::TEXT, nullable: true)]
+    private ?string $seminar_allg_bedingg = null;
+
+    public function getSeminarId(): ?int
+    {
+        return $this->seminar_id;
+    }
+}
